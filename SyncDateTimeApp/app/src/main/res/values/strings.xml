@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SyncDateTimeApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_get_server_time">Get server time</string>
+    <string name="btn_get_device_time">Get device time</string>
+</resources>
