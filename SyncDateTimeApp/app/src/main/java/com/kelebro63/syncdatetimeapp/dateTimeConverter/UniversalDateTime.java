@@ -16,16 +16,19 @@ public class UniversalDateTime {
         this.serverTime = serverTime;
     }
 
-    public UniversalDateTime universalDateTimeGetterFromServer(DateTime serverTime) {
+    public static UniversalDateTime universalDateTimeGetterFromServer(DateTime serverTime) {
         return new UniversalDateTime(serverTime);
     }
 
-    public UniversalDateTime universalDateTimeGetterFromDevice(DateTime deviceTime) {
-        return new UniversalDateTime(new DateTime(deviceTime.getMillis() - displacementTime));
+    public static UniversalDateTime universalDateTimeGetterFromDevice(DateTime deviceTime) {
+        return displacementTime != null ? new UniversalDateTime(new DateTime(deviceTime.getMillis() - displacementTime)) : null;
     }
 
     public void CalculateDisplacementTime(DateTime deviceTime) {
         displacementTime = deviceTime.getMillis() - serverTime.getMillis();
     }
 
+    public DateTime getServerTime() {
+        return serverTime;
+    }
 }
