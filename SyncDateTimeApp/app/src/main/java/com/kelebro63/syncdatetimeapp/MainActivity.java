@@ -8,12 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.kelebro63.syncdatetimeapp.dateTimeConverter.UniversalDateTime;
-
-import org.joda.time.DateTime;
-
-import java.util.Date;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnGetServerTime;
@@ -59,15 +53,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.button_server_time:
-                DateTime dateTime = new DateTime(new Date(1443547200000L));
-                UniversalDateTime universalDateTime = UniversalDateTime.universalDateTimeGetterFromServer(dateTime); //create instance UniversalDateTime with serverTime
-                tvServiceTime.setText(String.valueOf(universalDateTime.getServerTime().toString("MM/dd/yyyy HH:mm:ss")));
-                universalDateTime.CalculateDisplacementTime(new DateTime(new Date()));
-                tvDisplacement.setText(String.valueOf(UniversalDateTime.displacementTime));
-                tvDeviseTimeToServer.setText(String.valueOf(UniversalDateTime.universalDateTimeGetterFromDevice(new DateTime(new Date())).getServerTime().toString("MM/dd/yyyy HH:mm:ss")));
-                tvDeviseTime.setText(String.valueOf(new Date()));
-                break;
+//            case R.id.button_server_time:
+//                DateTime dateTime = new DateTime(new Date(1443547200000L));
+//                UniversalDateTime universalDateTime = UniversalDateTime.universalDateTimeGetterFromServer(dateTime); //create instance UniversalDateTime with serverTime
+//                tvServiceTime.setText(String.valueOf(universalDateTime.getServerTime().toString("MM/dd/yyyy HH:mm:ss")));
+//                universalDateTime.CalculateDisplacementTime(new DateTime(new Date()));
+//                tvDisplacement.setText(String.valueOf(UniversalDateTime.displacementTime));
+//                tvDeviseTimeToServer.setText(String.valueOf(UniversalDateTime.universalDateTimeGetterFromDevice(new DateTime(new Date())).getServerTime().toString("MM/dd/yyyy HH:mm:ss")));
+//                tvDeviseTime.setText(String.valueOf(new Date()));
+//                break;
         }
     }
 }
